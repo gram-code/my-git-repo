@@ -76,3 +76,51 @@ git add README.md .gitignore README.md
 git commit -m "Task No. 4"
 git push
 ```
+
+Вывод команды `git status` 
+```bash
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        notes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+## 5. Слияние веток и разрешение конфликтов
+### Задание
+- Создайте новую ветку "feature-branch" в вашем репозитории.
+- Внесите изменения в файл `index.html` в ветке "feature-branch", например, добавьте новую строку.
+- Сохраните изменения и зафиксируйте их.
+- Переключитесь обратно на основную ветку.
+- Внесите другие изменения в файл `index.html` в основной ветке, например, измените существующую строку.
+- Сохраните изменения и зафиксируйте их.
+- Попробуйте слить ветку "feature-branch" в основную ветку с использованием команды `git merge`.
+- Разрешите возникшие конфликты при слиянии веток в файле `index.html`, сохраните файл с правильными изменениями.
+- Зафиксируйте разрешение конфликтов и завершите процесс слияния.
+
+### Решение 
+Создадим и переключимся на новую ветку:
+```bash
+git checkout -b feature-brach
+```
+Создадим файл и запишем текст:
+```bash
+echo "новая строка" > index.html
+```
+Зафиксируем изменения:
+```bash
+git add index.html
+git commit -m "Task No. 5 - feature-brach commit"
+git push origin feature-brach
+```
+Переключимся на основную ветку, создадим там файл и зафиксируем изменения:
+```bash
+git checkout main
+echo "новая строка 2" > index.html
+git add index.html README.md
+git commit -m "Task No. 5 - main commit"
+git push origin feature-main
+```
