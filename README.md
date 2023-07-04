@@ -47,4 +47,11 @@ git commit -m "Added info in README.md"
 ```bash
 git push
 ```
+- Сделаем еще один коммит и запушим его
+```bash
+git add README.md
+git commit -m "Added info in README.md - second commit"
+git push
+```
+
 
