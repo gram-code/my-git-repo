@@ -122,5 +122,25 @@ git checkout main
 echo "новая строка 2" > index.html
 git add index.html README.md
 git commit -m "Task No. 5 - main commit"
-git push origin feature-main
+git push origin main
 ```
+Пробуем слить ветки с помощью `git merge feature-brach`:
+```bash
+Auto-merging index.html
+CONFLICT (add/add): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+Файл `index.html` содержит два варианта строки, обернутые специальными служебными скобками.
+Сохраним обе строки, файл `index.html` теперь выглядит так:
+```
+новая строка 2
+новая строка
+```
+И зафиксируем:
+```
+git add index.html
+git commit -m "MERGE!!!!"
+git push
+```
+
+
